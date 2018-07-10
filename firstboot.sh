@@ -3,7 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 MYUSER=skaufman
 export MYUSER=skaufman
 
-echo <<EOS >> /etc/network/interfaces.d/virtualbox-host-only
+echo <<EOS > /etc/network/interfaces.d/virtualbox-host-only
 allow-hotplug enp0s8
 iface enp0s8 inet dhcp
 EOS
@@ -113,11 +113,15 @@ EOS
 
 cp /etc/skel/.profile /home/$MYUSER/.profile
 
-
-
 ##Set up google utils gsutil
 # Create an environment variable for the correct distribution
 
+function install_google_cloud_sdk() {
+  if test -e /etc/apt/sources.list.d/google-cloud-sdk.list;
+  then
+    echo "google cloud sdk already installed."
+    return
+  fi
 # Add the Cloud SDK distribution URI as a package source
 apt-get install --no-install-recommends -y lsb-release
 echo "deb http://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
@@ -128,5 +132,9 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 # Update and install the Cloud SDK
 apt-get update
 apt-get install -y --no-install-recommends google-cloud-sdk
+
+}
+
+install_google_cloud_sdk
 
 ##/End gsutil
