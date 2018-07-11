@@ -49,6 +49,7 @@ apt-get update && apt-get install --no-install-recommends -y \
     bind9 \
     bind9utils \
     dnsutils \
+    cryptsetup \
     module-assistant
 
 export DEBIAN_FRONTEND=noninteractive
