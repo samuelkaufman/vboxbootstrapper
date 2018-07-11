@@ -67,4 +67,3 @@ check_env \
   && gopath \
   && install_dep \
   && perlenv
-

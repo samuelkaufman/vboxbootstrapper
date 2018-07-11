@@ -32,8 +32,6 @@ apt-get update && apt-get install --no-install-recommends -y \
     pkg-config \
     automake \
     make \
-    less \
-    subversion \
     handbrake-cli \
     ntp \
     ntpdate \
@@ -43,9 +41,14 @@ apt-get update && apt-get install --no-install-recommends -y \
     telnet \
     lsof \
     nginx \
-		net-tools \
+	net-tools \
     redis-server \
     debconf-utils \
+    openvpn \
+    resolvconf \
+    bind9 \
+    bind9utils \
+    dnsutils \
     module-assistant
 
 export DEBIAN_FRONTEND=noninteractive
@@ -101,7 +104,7 @@ usermod -a -G sudo $MYUSER
 #turn off pw login for root
 perl -p -i -e 's/#PermitRootLogin prohibit-password/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
 
-cat <<'EOS' > /etc/skel/.profile
+cat <<'EOS' >> /etc/skel/.profile
 export PATH=/opt/go-1.10.3/bin:$PATH
 export PATH=/opt/node-8.11.3/bin:$PATH
 export PATH=/opt/perl-5.26.2/bin:$PATH
