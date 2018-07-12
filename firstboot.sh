@@ -41,7 +41,7 @@ apt-get update && apt-get install --no-install-recommends -y \
     telnet \
     lsof \
     nginx \
-	net-tools \
+    net-tools \
     redis-server \
     debconf-utils \
     openvpn \
