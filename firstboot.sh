@@ -50,7 +50,8 @@ apt-get update && apt-get install --no-install-recommends -y \
     bind9utils \
     dnsutils \
     cryptsetup \
-    module-assistant
+    module-assistant \
+    python-pip
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -138,3 +139,7 @@ apt-get install -y --no-install-recommends google-cloud-sdk
 install_google_cloud_sdk
 
 ##/End gsutil
+
+##Update pip
+
+pip install --upgrade pip virtualenv
