@@ -51,6 +51,8 @@ apt-get update && apt-get install --no-install-recommends -y \
     dnsutils \
     cryptsetup \
     module-assistant \
+    libssl-dev \
+    libzip-dev \
     python-pip
 
 export DEBIAN_FRONTEND=noninteractive
