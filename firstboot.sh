@@ -53,6 +53,7 @@ apt-get update && apt-get install --no-install-recommends -y \
     module-assistant \
     libssl-dev \
     libzip-dev \
+    man-db \
     python-pip
 
 export DEBIAN_FRONTEND=noninteractive
