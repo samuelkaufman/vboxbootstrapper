@@ -138,3 +138,8 @@ apt-get install -y --no-install-recommends google-cloud-sdk google-cloud-sdk-app
 ##Update pip
 
 pip install --upgrade pip virtualenv
+
+
+#VirtualBox Guest Additions Prep
+apt-get install dkms
+m-a prepare
